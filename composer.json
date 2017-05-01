@@ -1,0 +1,46 @@
+{
+    "name": "ShoeZzilla Shoes Shop",
+    "description": "Internet shop for sale shoes",
+    "keywords": ["ShoeZzilla", "shoezzilla", "Обувь", "Мужская обувь", "Интернет магазин"],
+    "type": "project",
+    "minimum-stability": "dev",
+    "require": {
+        "yiisoft/yii2": "*",
+        "yiisoft/yii2-bootstrap": "*",
+        "yiisoft/yii2-swiftmailer": "*",
+        "yiisoft/yii2-twig": "*",
+        "components/font-awesome": "^4.7"
+    },
+    "require-dev": {
+        "yiisoft/yii2-debug": "~2.0.0",
+        "yiisoft/yii2-gii": "~2.0.0",
+        "yiisoft/yii2-faker": "~2.0.0"
+    },
+    "config": {
+        "process-timeout": 1800,
+        "fxp-asset": {
+            "installer-paths": {
+                "npm-asset-library": "vendor/npm",
+                "bower-asset-library": "vendor/bower"
+            }
+        }
+    },
+    "extra": {
+        "yii\\composer\\Installer::postCreateProject": {
+            "setPermission": [
+                {
+                    "runtime": "0777",
+                    "web/assets": "0777",
+                    "yii": "0755"
+                }
+            ],
+            "generateCookieValidationKey": [
+                "scripts/config/web.php"
+            ]
+        },
+        "asset-installer-paths": {
+          "npm-asset-library": "vendor/npm",
+          "bower-asset-library": "vendor/bower"
+        }
+    }
+}
