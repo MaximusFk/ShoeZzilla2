@@ -21,9 +21,9 @@ $config = [
 //                ],
 //            ],
 //        ],
-        'formatter' => [
-            'class' => 'app\components\Formatter',
-        ],
+//        'formatter' => [
+//            'class' => 'app\components\Formatter',
+//        ],
         'request' => [
             'cookieValidationKey' => 'RiAveGUdUaddfdWZddHVevMJRGd5Rij8uh',
         ],
