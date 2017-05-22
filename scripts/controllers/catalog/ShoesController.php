@@ -1,5 +1,5 @@
 <?php
-namespace app\controllers;
+namespace app\controllers\catalog;
 
 use yii\web\Controller;
 use yii\data\ActiveDataProvider;

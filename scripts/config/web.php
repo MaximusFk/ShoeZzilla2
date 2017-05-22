@@ -60,7 +60,7 @@ $config = [
                 'basePath' => '@app/styles',
                 'baseUrl' => '@web/styles',
                 'pathMap' => [ '@app/views' => '@app/styles' ]
-            ]
+            ],
 //            'class' => 'yii\web\View',
 //            'renderers' => [
 //                'twig' => [
