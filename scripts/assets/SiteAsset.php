@@ -6,8 +6,9 @@ use yii\web\AssetBundle;
 class SiteAsset extends AssetBundle {
     public $basePath = '@webroot';
     public $baseUrl = '@web';
+    public $sourcePath = '@app';
     public $css = [
-        'css/styles.css'
+        'scripts/styles/styles.css'
     ];
     public $js = [
     ];
@@ -15,5 +16,8 @@ class SiteAsset extends AssetBundle {
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
         'app\assets\FontAwesomeAsset'
+    ];
+    public $jsOptions = [
+        'position' => \yii\web\View::POS_HEAD
     ];
 }
