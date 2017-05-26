@@ -1,23 +1,10 @@
 <?php
-use yii\grid\GridView;
+use yii\widgets\ListView;
 ?>
-<section>
-    <?=
-    GridView::Widget([
+<section class="shoes-list">
+    <?= ListView::widget([
         'dataProvider' => $data_provider,
-        'columns' => [
-            'id',
-            'name',
-            'color',
-            'price_whole',
-            'price_retail',
-            'size_min',
-            'size_max',
-            'season',
-            'category',
-            'gender',
-            'brand'
-        ]
+        'itemView' => '//catalog/components/shoes_item_b'
     ]);
     ?>
 </section>
