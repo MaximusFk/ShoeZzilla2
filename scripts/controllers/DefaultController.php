@@ -10,9 +10,8 @@ class DefaultController extends Controller {
     public function actionIndex() {
         return $this->render($this->index);
     }
-    
-    public function actions()
-    {
+
+    public function actions() {
         return [
             'error' => [
                 'class' => 'yii\web\ErrorAction',

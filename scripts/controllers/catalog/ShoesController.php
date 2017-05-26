@@ -17,11 +17,14 @@ class ShoesController extends Controller {
         $shoes = Shoes::find()->orderBy('name');
         
         $provider = new ActiveDataProvider([
-            'query' => $shoes
+            'query' => $shoes,
+            'pagination' => [
+                'pageSize' => 20,
+            ]
         ]);
         
         return $this->render('list', [
-            'shoes_query' => $shoes,
+            'shoes' => $shoes->all(),
             'data_provider' => $provider
         ]);
     }
