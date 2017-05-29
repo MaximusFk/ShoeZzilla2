@@ -1,1 +1,4 @@
 /.proto_config.json
+/vendor/
+/composer.lock
+/scripts/styles/styles.css.map
