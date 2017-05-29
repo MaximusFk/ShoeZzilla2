@@ -21,15 +21,15 @@ use yii\helpers\Html;
 $item = $model;
 ?>
 <article class="product-item col-xs-12 col-md-4 col-sm-6 col-lg-3">
-    <a href="#">
-        <img src="<?= $item->getImageFullPath('400'); ?>"/>
+    <a href="<?= $item->getLinkR(); ?>">
+        <img src="<?= $item->getImageHeadFullPath('400'); ?>"/>
     </a>
     <h3><?= Html::encode($item->getDisplayName()); ?></h3>
     <section class="item-description">
         <span>Lorem Ipsum</span>
     </section>
     <section class="item-button-set btn-group">
-        <a href="/catalog/shoes/view/<?= $item->getShortName(); ?>" class="btn btn-lg btn-default"><?= Yii::t('button', 'Detail'); ?></a>
+        <a href="<?= $item->getLinkR(); ?>" class="btn btn-lg btn-default"><?= Yii::t('button', 'Detail'); ?></a>
         <button class="btn btn-lg btn-default"><?= Html::tag('span', '', ['class' => 'fa fa-heart-o']); ?></button>
         <button class="btn btn-lg btn-success"><?= Html::tag('span', Html::tag('b', ' ' . $item->getPriceRetail()), ['class' => 'fa fa-cart-arrow-down']); ?></button>
     </section>

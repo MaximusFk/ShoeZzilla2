@@ -2,6 +2,7 @@
 namespace app\models;
 
 use yii\db\ActiveRecord;
+use Yii;
 /**
  * Description of Shoes
  *
@@ -23,8 +24,30 @@ class Shoes extends ActiveRecord {
         
         return $shoes;
     }
+    
+    public function getLinkR() {
+        return '/catalog/shoes/view?id=' . $this->getId();
+    }
+    
+    public function getLinkPublish() {
+        return 'https://shoezzilla.com.ua' . $this->getLinkR();
+    }
+    
+    public function getImageList() {
+        $dir = '../web' . self::IMAGE_THUMBS_PATH . '/' . $this->getImagePath() . '/';
+        $fs_dir = opendir($dir);
+        $result = [];
+        if($fs_dir) {
+            while (false !== ($file = readdir($fs_dir))) {
+                if(fnmatch('*.jpg', $file)) {
+                    $result[] = $file;
+                }
+            }
+        }
+        return $result;
+    }
 
-        //*** Model table getters ***//
+    //*** Model table getters ***//
     public function getImagePath() {
         return $this->image_path;
     }
@@ -33,7 +56,11 @@ class Shoes extends ActiveRecord {
         return $this->image_head . '_' . $size . self::IMAGE_EXT;
     }
     
-    public function getImageFullPath($size = '800') {
+    public function getImageFullPath($image_name = '') {
+        return self::IMAGE_THUMBS_PATH . '/' . $this->getImagePath() . '/' . $image_name;
+    }
+
+    public function getImageHeadFullPath($size = '800') {
         return self::IMAGE_THUMBS_PATH . '/' . $this->getImagePath() . '/' . $this->getImageHead($size);
     }
     
