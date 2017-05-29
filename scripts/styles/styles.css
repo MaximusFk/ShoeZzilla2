@@ -23,10 +23,9 @@ header {
 }
 .shoes-list {
   padding: 1em;
+  text-align: center;
 }
-.product-item {
-  border: 1px solid grey;
-  border-radius: 5px;
-  margin: 1px;
+.product-item img {
+  width: calc(65% + 50px);
 }
 /*# sourceMappingURL=styles.css.map */
