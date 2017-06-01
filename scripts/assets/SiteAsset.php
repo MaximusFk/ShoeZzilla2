@@ -8,7 +8,8 @@ class SiteAsset extends AssetBundle {
     public $baseUrl = '@web';
     public $sourcePath = '@app';
     public $css = [
-        'scripts/styles/styles.css'
+        'scripts/styles/styles.css',
+        'scripts/styles/theme.css'
     ];
     public $js = [
     ];
