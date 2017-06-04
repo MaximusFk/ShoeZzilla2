@@ -22,13 +22,14 @@ SiteAsset::register($this);
     <?php Navbar::begin(); ?>
     <?= Nav::widget([
         'items' => [
-            ['label' => Yii::t('header', 'Home'), 'icon' => 'fa-home', 'url' => ['/']],
-            ['label' => Yii::t('header', 'Catalog'), 'icon' => 'fa-shopping-bag', 'url' => ['/catalog/shoes/list'] //'items' => [
+            ['label' => ' ' . Yii::t('header', 'Home'), 'icon' => 'fa-home', 'url' => ['/'], 'linkOptions' => [ 'class' => 'fa fa-home' ]],
+            ['label' => ' ' . Yii::t('header', 'Catalog'), 'icon' => 'fa-shopping-bag', 'url' => ['/catalog/shoes/list'],
+                'linkOptions' => [ 'class' => 'fa fa-shopping-bag' ]//'items' => [
             //    ['label' => Yii::t('header', 'Shoes'), 'url' => ['/catalog/shoes/list']],
             //    ['label' => Yii::t('header', 'Accessories'), 'url' => ['/catalog/accessories/list']],
             //    ['label' => Yii::t('header', 'Cares'), 'url' => ['/catalog/cares/list']]
             ],
-            ['label' => Yii::t('header', 'About'), 'url' => ['/about']]
+            ['label' => ' ' . Yii::t('header', 'About'), 'url' => ['/about'], 'linkOptions' => [ 'class' => 'fa fa-info-circle' ]]
         ],
         'options' => [
             'class' => 'nav-pills'

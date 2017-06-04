@@ -182,8 +182,11 @@
 .navbar-default .nav-pills li a {
   color: #018301;
   font-weight: bold;
+  font-size: 1.2em;
+  line-height: 2;
 }
-.navbar-default .nav-pills li.active a {
+.navbar-default .nav-pills li.active a,
+.navbar-default .nav-pills li > a:hover {
   background: #018301 url(/assets/resources/images/shoezz_bg.png) repeat;
   color: #fff;
 }
