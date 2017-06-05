@@ -22,21 +22,19 @@ use yii\helpers\Html;
 <section class="product-view row">
     <section class="col-lg-5">
         <?= Html::img($item->getImageHeadFullPath(), ['class' => 'img-rounded', 'width' => '600px']); ?>
-        <section class="row">
+        <section class="item-thumbnails">
         <?php foreach (array_filter($item->getImageList(), function ($file) { return fnmatch('*100*', $file); }) as $img_file) : ?>
-        <section class="col-lg-2">
             <?= Html::img($item->getImageFullPath($img_file), ['class' => 'img-thumbnail']); ?>
-        </section>
         <?php endforeach; ?>
-    </section>
+        </section>
     </section>
     <section class="col-lg-6">
-        <section class="col-lg-8">
+        <section class="col-lg-9">
             <h1 class="product-name">
                 <?= Html::encode($item->getDisplayName()); ?>
             </h1>
         </section>
-        <section class="col-lg-4 product-controls">
+        <section class="col-lg-3 product-controls">
             <h3 class="product-price"><?= Html::encode($item->getPriceRetail()); ?></h3>
             <button class="btn btn-lg btn-primary">
                 <?= Html::tag('span', ' ' . Yii::t('button', 'To cart'), ['class' => 'fa fa-cart-arrow-down']); ?>
