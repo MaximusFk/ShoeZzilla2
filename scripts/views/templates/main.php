@@ -22,17 +22,24 @@ SiteAsset::register($this);
     <?php Navbar::begin(); ?>
     <?= Nav::widget([
         'items' => [
-            ['label' => ' ' . Yii::t('header', 'Home'), 'icon' => 'fa-home', 'url' => ['/'], 'linkOptions' => [ 'class' => 'fa fa-home' ]],
-            ['label' => ' ' . Yii::t('header', 'Catalog'), 'icon' => 'fa-shopping-bag', 'url' => ['/catalog/shoes/list'],
-                'linkOptions' => [ 'class' => 'fa fa-shopping-bag' ]//'items' => [
-            //    ['label' => Yii::t('header', 'Shoes'), 'url' => ['/catalog/shoes/list']],
-            //    ['label' => Yii::t('header', 'Accessories'), 'url' => ['/catalog/accessories/list']],
-            //    ['label' => Yii::t('header', 'Cares'), 'url' => ['/catalog/cares/list']]
+            ['label' => ' ' . Yii::t('header', 'Home'), 'url' => ['/'], 'linkOptions' => [ 'class' => 'fa fa-home' ]],
+            ['label' => ' ' . Yii::t('header', 'Catalog'), 'url' => ['/catalog/shoes/list'],
+                'linkOptions' => [ 'class' => 'fa fa-shopping-bag' ]
             ],
+            ['label' => ' ' . Yii::t('header', 'Articles'), 'url' => ['#'], 'linkOptions' => [ 'class' => 'fa fa-align-left' ]],
             ['label' => ' ' . Yii::t('header', 'About'), 'url' => ['/about'], 'linkOptions' => [ 'class' => 'fa fa-info-circle' ]]
         ],
         'options' => [
-            'class' => 'nav-pills'
+            'class' => 'nav navbar-nav nav-pills'
+        ]
+    ]); ?>
+    <?= Nav::widget([
+        'items' => [
+            [ 'label' => '', 'url' => ['#'], 'linkOptions' => ['class' => 'fa fa-user'] ],
+            [ 'label' => '', 'url' => ['#'], 'linkOptions' => ['class' => 'fa fa-shopping-cart'] ]
+        ],
+        'options' => [
+            'class' => 'nav navbar-nav nav-pills navbar-right'
         ]
     ]); ?>
     <?php NavBar::end(); ?>
