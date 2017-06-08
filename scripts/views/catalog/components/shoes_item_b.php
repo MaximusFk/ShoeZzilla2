@@ -31,6 +31,6 @@ $item = $model;
     <section class="item-button-set btn-group">
         <a href="<?= $item->getLinkR(); ?>" class="btn btn-lg btn-default"><?= Yii::t('button', 'Detail'); ?></a>
         <button class="btn btn-lg btn-default"><?= Html::tag('span', '', ['class' => 'fa fa-heart-o']); ?></button>
-        <button class="btn btn-lg btn-primary"><?= Html::tag('span', Html::tag('b', ' ' . $item->getPriceRetail()), ['class' => 'fa fa-cart-arrow-down']); ?></button>
+        <button class="btn btn-lg btn-primary"><?= Html::tag('span', Html::tag('b', ' ' . $item->getPriceRetail() . ' &#8372'), ['class' => 'fa fa-cart-arrow-down']); ?></button>
     </section>
 </article>

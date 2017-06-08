@@ -35,7 +35,7 @@ use yii\helpers\Html;
             </h1>
         </section>
         <section class="col-lg-3 product-controls">
-            <h3 class="product-price"><?= Html::encode($item->getPriceRetail()); ?></h3>
+            <h3 class="product-price"><?= Html::encode($item->getPriceRetail()) . ' &#8372'; ?></h3>
             <button class="btn btn-lg btn-primary">
                 <?= Html::tag('span', ' ' . Yii::t('button', 'To cart'), ['class' => 'fa fa-cart-arrow-down']); ?>
             </button>
