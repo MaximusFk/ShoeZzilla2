@@ -46,6 +46,13 @@ class Shoes extends ActiveRecord {
         }
         return $result;
     }
+    
+    public function getSizes() {
+        for($i = $this->getSizeMin(); $i <= $this->getSizeMax(); ++$i) {
+            $sizes[] = $i;
+        }
+        return $sizes;
+    }
 
     //*** Model table getters ***//
     public function getImagePath() {
@@ -82,6 +89,18 @@ class Shoes extends ActiveRecord {
     
     public function getShortName() {
         return $this->name;
+    }
+    
+    public function getSizeMin() {
+        return $this->size_min;
+    }
+    
+    public function getSizeMax() {
+        return $this->size_max;
+    }
+    
+    public function getGender() {
+        return $this->gender;
     }
     //^^^ model table getters ^^^//
  }
