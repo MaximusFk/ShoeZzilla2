@@ -25,4 +25,18 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 .product-item img {
   width: calc(65% + 50px);
 }
+.header-main {
+  display: none;
+  visibility: none;
+  background-image: url(/assets/resources/images/shoezz_bg.png);
+  background-repeat: repeat;
+  background-color: aliceblue;
+}
+@media (min-width: 768px) {
+  .header-main {
+    height: 100px;
+    display: block;
+    margin-bottom: 2px;
+  }
+}
 /*# sourceMappingURL=styles.css.map */

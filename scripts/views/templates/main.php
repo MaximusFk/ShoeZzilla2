@@ -19,6 +19,7 @@ SiteAsset::register($this);
 </head>
 <body>
     <header>
+        <div class="header-main"></div>
     <?php Navbar::begin(); ?>
     <?= Nav::widget([
         'items' => [
