@@ -53,6 +53,16 @@ class Shoes extends ActiveRecord {
         }
         return $sizes;
     }
+    
+    public static function array_concat_sum(array ...$arrays) {
+        $result = [];
+        foreach ($arrays as $array) {
+            foreach ($array as $key => $value) {
+                $result[$key] = key_exists($key, $result) ? $result[$key] + $value : $value;
+            }
+        }
+        return $result;
+    }
 
     //*** Model table getters ***//
     public function getImagePath() {
