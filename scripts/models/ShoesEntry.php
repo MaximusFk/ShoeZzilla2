@@ -33,18 +33,27 @@ class ShoesEntry extends ActiveRecord {
     }
     
     public static function buildEntry($shoes_item, $parent_table) {
-        $new_entry = new ShoesEntry();
+        $entry = new ShoesEntry();
         $entry->item_id = $shoes_item->getId();
         $entry->parent_id = $parent_table->getId();
         $entry->parent_table = $parent_table->tableName();
-        return $new_entry;
+        return $entry;
     }
     
     public static function findEntry($shoes_item, $parent_table) {
         $entry = static::find()->where([
             'item_id' => $shoes_item->getId(), 
             'parent_table' => $parent_table->tableName(), 
-            'parent_id' => $this->getId()
+            'parent_id' => $parent_table->getId()
+        ])->one();
+        return $entry;
+    }
+    
+    public static function findPRaw($shoes_id, $parent_table_name, $parent_table_id) {
+        $entry = static::find()->where([
+            'item_id' => $shoes_id, 
+            'parent_table' => $parent_table_name, 
+            'parent_id' => $parent_table_id
         ])->one();
         return $entry;
     }

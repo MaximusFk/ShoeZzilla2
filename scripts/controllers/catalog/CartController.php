@@ -40,15 +40,36 @@ class CartController extends Controller {
     // Ajax methods for managing current session's cart
     // --------------------------------------------------------------
     
-    public function actionAdd($shoes_id, $count, array $sizes) {
+    public function actionAdd($product_id, array $sizes) {
         \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
         
+        if(!\Yii::$app->session->isActive) {
+            \Yii::$app->session->open();
+        }
+        
+        $session = \Yii::$app->session;
+        
+        $cart_id = $session['cart_id'];
+        
+        $item = \app\models\Shoes::findById($product_id);
+        $cart = \app\models\Cart::findById($cart_id);
+        if(!$cart) {
+            $cart = \app\models\Cart::build();
+            $cart->save();
+        }
+        $cart->addItem($item, $sizes);
+        $cart->save();
+        
+        \Yii::$app->session->close();
         return [
-            'status' => 'not supported'
+            'status' => 'done',
+            'count' => $cart->getCount(),
+            'price' => $cart->getPriceSum(),
+            'cart_id' => $cart->getId()
         ];
     }
     
-    public function actionRemove($shoes_id) {
+    public function actionRemove($product_id) {
         \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
         return [
             'status' => 'not supported'

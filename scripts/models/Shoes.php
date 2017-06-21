@@ -19,6 +19,12 @@ class Shoes extends ActiveRecord {
         return '_Shoes_';
     }
     
+    public static function findById($id) {
+        $shoes = static::findOne($id);
+        
+        return $shoes;
+    }
+
     public static function getById($id) {
         $shoes = static::findOne($id);
         

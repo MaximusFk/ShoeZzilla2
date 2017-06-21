@@ -24,6 +24,10 @@ $config = [
 //        'formatter' => [
 //            'class' => 'app\components\Formatter',
 //        ],
+        'session' => [
+            'class' => 'yii\web\DbSession',
+            'sessionTable' => '_Sessions_'
+        ],
         'request' => [
             'cookieValidationKey' => 'RiAveGUdUaddfdWZddHVevMJRGd5Rij8uh',
         ],
